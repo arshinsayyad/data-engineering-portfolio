@@ -46,6 +46,8 @@ def load_to_postgres(df):
         );
     """)
 
+    cursor.execute("TRUNCATE TABLE exchange_rates;")
+
     for _, row in df.iterrows():
         cursor.execute(
             """
